@@ -10,16 +10,21 @@ template <typename T> std::optional<T> divide(T y, T x) noexcept {
   }
 }
 
+template <typename T> std::ostream &operator <<(std::ostream &os, const std::optional<T> &z) {
+  if (z) {
+    os << z.value();
+  }
+  else {
+    os << "Nothing";
+  }
+  return os;
+}
+
 int main(void) {
   float x = 0.0;
   float y = 2.0;
   auto z = divide(y, x);
-  if (z) {
-    std::cout << z.value() << std::endl;
-  }
-  else {
-    std::cerr << "Divide by zero" << std::endl;
-  }
+  std::cout << z << std::endl;
   return 0;
 }
 
