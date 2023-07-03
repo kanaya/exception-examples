@@ -18,7 +18,7 @@ int main(void) {
     std::cout << z.value() << std::endl;
   }
   else {
-    std::cerr << "Devide by zero" << std::endl;
+    std::cerr << "Divide by zero" << std::endl;
   }
   return 0;
 }
